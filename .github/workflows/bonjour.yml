@@ -12,4 +12,5 @@ jobs:
           path: ./README.md
       - uses: Code-Hex/neo-cowsay-action@v1
         with:
+          cow: 'random'
           message: "${{ steps.readfile.outputs.content }}"
