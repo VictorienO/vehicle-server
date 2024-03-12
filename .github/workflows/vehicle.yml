@@ -1,0 +1,15 @@
+name: vehicle
+on:
+  - push
+jobs:
+  integration_continue:
+    runs-on: ubuntu-22.04
+    steps:
+      - uses: actions/checkout@v4 # Récupère le contenu du dépôt correspondant au commit du workflow en cours
+      - uses: actions/checkout@v4
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '^1.13.1' # The Go version to download (if necessary) and use.
+      - run: go version
+      - run: make build
+      - run: ls dist/
