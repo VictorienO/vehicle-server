@@ -7,4 +7,4 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: ls -l # Liste les fichier du répertoire courant
-      - run: cat README.md # Affiche le contenu du fichier `README.md` à la base du dépôt
+      - run: cat README.md | cowsay dans GitPod # Affiche le contenu du fichier `README.md` à la base du dépôt
