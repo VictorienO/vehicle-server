@@ -13,3 +13,7 @@ jobs:
       - run: go version
       - run: make build
       - run: ls dist/
+      - uses: Code-Hex/neo-cowsay-action@v1
+        with:
+          cow: 'random'
+          message: "Sanu"
