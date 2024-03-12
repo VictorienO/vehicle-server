@@ -20,7 +20,7 @@ POSTGRES_DB=vehicle-server
 DATABASE_URL=postgres://$(POSTGRES_USER):$(POSTGRES_PASSWORD)@localhost:5432/$(POSTGRES_DB)
 
 .PHONY: dev
-dev:
+dev: dev_db
 	go run ./cmd/server \
 		-listen-address=:8080 \
 		-database-url=$(DATABASE_URL)
