@@ -17,3 +17,7 @@ jobs:
         with:
           cow: 'random'
           message: "Bouihnjhojur"
+      - uses: Code-Hex/neo-cowsay-action@v1
+        with:
+          cow: 'random'
+          message: "Salut"
