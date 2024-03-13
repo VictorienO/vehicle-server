@@ -1,5 +1,5 @@
 .PHONY: all
-all: clean dist build
+all: clean dist build package
 
 .PHONY: dist
 dist:
@@ -18,6 +18,7 @@ POSTGRES_USER=vehicle-server
 POSTGRES_PASSWORD=secret
 POSTGRES_DB=vehicle-server
 DATABASE_URL=postgres://$(POSTGRES_USER):$(POSTGRES_PASSWORD)@localhost:5432/$(POSTGRES_DB)
+
 
 .PHONY: dev
 dev: dev_db
@@ -48,3 +49,10 @@ unit_test:
 .PHONY: integration_test
 integration_test:
 	go test -v -count=1 --tags=integration ./app
+
+IMAGE?=VOllivier/vehicle-server
+TAG?=dev
+
+.PHONY: package
+package:
+  docker build -t $(IMAGE):$(TAG) .
