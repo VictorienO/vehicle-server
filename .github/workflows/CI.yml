@@ -1,4 +1,4 @@
-name: vehicle
+name: CI
 on:
   - push
   - pull_request
@@ -12,6 +12,8 @@ jobs:
         with:
           go-version: '^1.13.1' # The Go version to download (if necessary) and use.
       - run: go version
+      - run: make integration_test
+      - run: make unit_test
       - run: make build
       - run: ls dist/
       - uses: Code-Hex/neo-cowsay-action@v1
