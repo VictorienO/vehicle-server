@@ -21,7 +21,7 @@ unit_test:
 integration_test:
 	go test -v -count=1 --tags=integration ./app
 
-IMAGE=VOllivier>/vehicle-server
+IMAGE=vollivier>/vehicle-server
 TAG?=dev
 
 .PHONY: package
