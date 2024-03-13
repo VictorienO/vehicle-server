@@ -16,6 +16,8 @@ jobs:
       - run: make unit_test
       - run: make build
       - run: ls dist/
+      - name: Package Application
+        run: make package
       - uses: Code-Hex/neo-cowsay-action@v1
         with:
           cow: 'random'
